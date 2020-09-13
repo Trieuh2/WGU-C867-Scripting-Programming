@@ -4,16 +4,19 @@
 using namespace std;
 
 int main() {
-	// studentData Table intialization
-	string studentID[5];
-	string firstName[5];
-	string lastName[5];
-	string email[5];
-	int age[5];
-	int days[5][3];
-	DegreeProgram dp[5];
+	const int rosterSize = 5;
 
-	// studentData Table declaration
+	/*
+	// studentData Table intialization	
+	string studentID[rosterSize];
+	string firstName[rosterSize];
+	string lastName[rosterSize];
+	string email[rosterSize];
+	int age[rosterSize];
+	int days[rosterSize][3];
+	DegreeProgram dp[rosterSize];
+
+	// creating studentData table
 	// studentID declaration 
 	studentID[0] = "A1";
 	studentID[1] = "A2";
@@ -80,11 +83,17 @@ int main() {
 	dp[2] = SOFTWARE;
 	dp[3] = SECURITY;
 	dp[4] = SOFTWARE;
+	*/
+
+	const string studentData[] =
+
+	{ "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY", "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK", "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE", "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY", "A5,[firstname],[lastname],[emailaddress],[age], [numberofdaystocomplete3courses],SOFTWARE" }
 
 	// creating students and adding them to the roster
-	roster classRoster;
+	roster classRoster = new roster();
 
-	for (int i = 0; i < 5; ++i) {
+	/*
+	for (int i = 0; i < rosterSize; ++i) {
 		classRoster.add(studentID[i],
 			firstName[i],
 			lastName[i],
@@ -95,10 +104,54 @@ int main() {
 			days[i][2],
 			dp[i]);
 	}
+	*/
 
-	// TODO: remove test case
+	// Prints out general information about the course, project, and author
+	cout << "C867-Scripting & Programming: Applications\n";
+	cout << "Language: C++\n";
+	cout << "Student ID: 001306217\n";
+	cout << "Name: Henry Trieu\n" << endl;
+
+	cout << "WIP" << endl;
+	// Test 1
+	cout << "Displaying all students:" << endl;
 	classRoster.printAll();
-	classRoster.remove("ZZZZ");
+	cout << endl;
+
+	// Test 2
+	cout << "Displaying invalid emails:" << endl;
+	classRoster.printInvalidEmails();
+	cout << "\n\n" << endl;
+
+	// Test 3
+	cout << "======================================================== \n";
+	cout << "loop through classRosterArray and print out the average number of days to complete all 3 courses for each student in the classRoster \n";
+	cout << "======================================================== \n";
+	for (int i = 0; i < rosterSize; ++i) {
+		classRoster.printAverageDaysInCourse(studentID[i]);
+	}
+	cout << "\n\n" << endl;
+
+	// Test 4
+	cout << "======================================================== \n";
+	cout << "classRoster.printByDegreeProgram(SOFTWARE) returns: \n";
+	cout << "======================================================== \n";
+	classRoster.printByDegreeProgram(SOFTWARE);
+	cout << "\n\n" << endl;
+
+	// Test 5
+	cout << "======================================================== \n";
+	cout << "classRoster.remove(\"A3\")	and classRoster.printAll() returns: \n";
+	cout << "======================================================== \n";
+	classRoster.remove("A3");
+	classRoster.printAll();
+	cout << "\n\n" << endl;
+
+	// Test 5
+	cout << "======================================================== \n";
+	cout << "Executing classRoster.remove(\"A3\") after the student has already been removed returns: \n";
+	cout << "========================================================\n";
+	cout << "\n\n" << endl;
 
 	return 0;
 }

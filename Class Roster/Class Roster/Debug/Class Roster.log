@@ -1,2 +1,3 @@
 ﻿  roster.cpp
-  Class Roster.vcxproj -> C:\Users\henry\iCloudDrive\School\WGU\C 867 Scripting & Programming\Projects\Class Roster\Debug\Class Roster.exe
+C:\Users\henry\Desktop\C++ Projects\Class Roster\Class Roster\roster.cpp(81,21): warning C4018: '<': signed/unsigned mismatch
+  Class Roster.vcxproj -> C:\Users\henry\Desktop\C++ Projects\Class Roster\Debug\Class Roster.exe

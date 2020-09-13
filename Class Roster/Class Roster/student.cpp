@@ -17,9 +17,10 @@ student::student(string id, string fn, string ln, string ea, int a, int daysLeft
 void student::print() {
 	cout << studentID << " \t First Name: " <<
 		firstName << " \t Last Name: " <<
-		lastName << " \t Age: " <<
+		lastName << " \t Email Address: " <<
+		emailAddress << " \t Age: " <<
 		age << " daysInCourse: {";
-	
+
 
 	// prints the number of days left in the nth course separated by commas
 	for (int n = 0; n < numClasses; ++n) {
@@ -43,7 +44,7 @@ void student::print() {
 	else if (program == SOFTWARE) {
 		cout << " \t Degree Program: Software" << endl;
 	}
-}			
+}
 
 // Accessor methods
 string student::GetStudentID() {

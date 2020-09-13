@@ -5,7 +5,11 @@
 using namespace std;
 
 class roster {
+	static const int ROSTER_SIZE = 5;
+
 	public:
+		roster();													// constructor
+
 		void add(string studentID,									// Adds a student to the roster using the parameters
 				string firstName,
 				string lastName,
@@ -20,11 +24,18 @@ class roster {
 		void printAverageDaysInCourse(string studentID);			// takes the average number of days left to complete the 3 courses
 		void printInvalidEmails();									// verifies and prints the email addresses that contain invalid characters "@", ".", and " "
 		void printByDegreeProgram(DegreeProgram degreeProgram);		// prints out student info for a degree program specified by degreePogram
+		void setNumStudentsAdded(int num);                                 // sets the numStudentsAdded internal data member to the inputted integer
 
+		student* getStudentAtIndex(int index);						// returns the student object at the inputted index within the classRosterArray
+		int	findStudentWithID(string id);							// returns the index of the student with the inputted studentID
+		int getRosterSize();										// returns the maximum number of students that can be in the classRosterArray
+		bool isNull(int index);										// checks whether there is a student at the given index
+		int getNumStudentsAdded();									// returns the number of students added into the classRosterArray
+			
 	// private internal data members
 	private:
-		student* classRosterArray[5]; // array of pointers to hold the data provided in the studentData table
-		int numStudentsAdded = 0;
+		student* classRosterArray[ROSTER_SIZE]; // array of pointers to hold the data provided in the studentData table
+		int numStudentsAdded;
 };
 
 #endif
