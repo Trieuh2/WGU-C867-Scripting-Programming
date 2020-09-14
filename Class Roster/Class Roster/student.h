@@ -4,31 +4,11 @@
 #include <iostream>
 using namespace std;
 
-
-
 class student {
 	static const int numClasses = 3;
 
-	public:
-		// Accessor methods
-		string GetStudentID();
-		string GetFirstName();
-		string GetLastName();
-		string GetEmailAddress();
-		int GetAge();
-		int* GetDaysLeftEachCourse();
-		DegreeProgram GetDegreeProgram();
-
-		// Mutator methods
-		void SetStudentID(string id);
-		void SetFirstName(string fn);
-		void SetLastName(string ln);
-		void SetEmailAddress(string ea);
-		void SetAge(int a);
-		void SetDaysLeftEachCourse(int daysLeft[3]);
-		void SetDegreeProgram(DegreeProgram dp);
-
-		// Constructor
+	public:	
+		// Parameterized constructor
 		student(string id,
 			string fn,
 			string ln,
@@ -39,6 +19,24 @@ class student {
 
 		// Customized print output
 		void print();
+
+		// Accessor methods
+		string getStudentID();
+		string getFirstName();
+		string getLastName();
+		string getEmailAddress();
+		int getAge();
+		int* getDaysLeftEachCourse();
+		DegreeProgram getDegreeProgram();
+
+		// Mutator methods
+		void setStudentID(string id);
+		void setFirstName(string fn);
+		void setLastName(string ln);
+		void setEmailAddress(string ea);
+		void setAge(int a);
+		void setDaysLeftEachCourse(int daysLeft[3]);
+		void setDegreeProgram(DegreeProgram dp);
 
 	// internal data members for student class
 	private:

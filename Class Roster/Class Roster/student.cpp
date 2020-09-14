@@ -2,14 +2,14 @@
 #include "student.h"
 using namespace std;
 
-// Constructor: creates a student object with the inputted parameters
+// Overloaded constructor: creates a student object with the inputted parameters
 student::student(string id, string fn, string ln, string ea, int a, int daysLeft[numClasses], DegreeProgram prg) {
 	studentID = id;
 	firstName = fn;
 	lastName = ln;
 	emailAddress = ea;
 	age = a;
-	this->SetDaysLeftEachCourse(daysLeft);
+	this->setDaysLeftEachCourse(daysLeft);
 	program = prg;
 }
 
@@ -19,7 +19,7 @@ void student::print() {
 		firstName << " \t Last Name: " <<
 		lastName << " \t Age: " <<
 		age << " daysInCourse: {";
-	
+
 
 	// prints the number of days left in the nth course separated by commas
 	for (int n = 0; n < numClasses; ++n) {
@@ -33,74 +33,74 @@ void student::print() {
 
 	// prints out the degree program and ends with new line
 	if (program == SECURITY) {
-		cout << " \t Degree Program: Security" << endl;
+		cout << " \t Degree Program: SECURITY" << endl;
 	}
 
 	else if (program == NETWORK) {
-		cout << " \t Degree Program: Network" << endl;
+		cout << " \t Degree Program: NETWORK" << endl;
 	}
 
 	else if (program == SOFTWARE) {
-		cout << " \t Degree Program: Software" << endl;
+		cout << " \t Degree Program: SOFTWARE" << endl;
 	}
-}			
+}
 
 // Accessor methods
-string student::GetStudentID() {
+string student::getStudentID() {
 	return studentID;
 }
 
-string student::GetFirstName() {
+string student::getFirstName() {
 	return firstName;
 }
 
-string student::GetLastName() {
+string student::getLastName() {
 	return lastName;
 }
 
-string student::GetEmailAddress() {
+string student::getEmailAddress() {
 	return emailAddress;
 }
 
-int student::GetAge() {
+int student::getAge() {
 	return age;
 }
 
-int* student::GetDaysLeftEachCourse() {
+int* student::getDaysLeftEachCourse() {
 	return daysLeftEachCourse;
 }
 
-DegreeProgram student::GetDegreeProgram() {
+DegreeProgram student::getDegreeProgram() {
 	return program;
 }
 
 // Mutator methods
-void student::SetStudentID(string id) {
+void student::setStudentID(string id) {
 	studentID = id;
 }
 
-void student::SetFirstName(string fn) {
+void student::setFirstName(string fn) {
 	firstName = fn;
 }
 
-void student::SetLastName(string ln) {
+void student::setLastName(string ln) {
 	lastName = ln;
 }
 
-void student::SetEmailAddress(string ea) {
+void student::setEmailAddress(string ea) {
 	emailAddress = ea;
 }
 
-void student::SetAge(int a) {
+void student::setAge(int a) {
 	age = a;
 }
 
-void student::SetDaysLeftEachCourse(int daysLeft[3]) {
+void student::setDaysLeftEachCourse(int daysLeft[3]) {
 	for (int i = 0; i < numClasses; ++i) {
 		daysLeftEachCourse[i] = daysLeft[i];
 	}
 }
 
-void student::SetDegreeProgram(DegreeProgram dp) {
+void student::setDegreeProgram(DegreeProgram dp) {
 	program = dp;
 }
